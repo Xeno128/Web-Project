@@ -1,0 +1,871 @@
+{
+    "get": "players",
+    "parameters": {
+        "search": "mbappe",
+        "league": "61"
+    },
+    "errors": [],
+    "results": 2,
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "response": [
+        {
+            "player": {
+                "id": 278,
+                "name": "K. Mbapp\u00e9",
+                "firstname": "Kylian",
+                "lastname": "Mbapp\u00e9 Lottin",
+                "age": 25,
+                "birth": {
+                    "date": "1998-12-20",
+                    "place": "Paris",
+                    "country": "France"
+                },
+                "nationality": "France",
+                "height": "178 cm",
+                "weight": "75 kg",
+                "injured": false,
+                "photo": "https://media-1.api-sports.io/football/players/278.png"
+            },
+            "statistics": [
+                {
+                    "team": {
+                        "id": 85,
+                        "name": "Paris Saint Germain",
+                        "logo": "https://media-1.api-sports.io/football/teams/85.png"
+                    },
+                    "league": {
+                        "id": 61,
+                        "name": "Ligue 1",
+                        "country": "France",
+                        "logo": "https://media-1.api-sports.io/football/leagues/61.png",
+                        "flag": "https://media-1.api-sports.io/flags/fr.svg",
+                        "season": 2023
+                    },
+                    "games": {
+                        "appearences": 3,
+                        "lineups": 2,
+                        "minutes": 219,
+                        "number": null,
+                        "position": "Attacker",
+                        "rating": "8.500000",
+                        "captain": false
+                    },
+                    "substitutes": {
+                        "in": 1,
+                        "out": 0,
+                        "bench": 1
+                    },
+                    "shots": {
+                        "total": 12,
+                        "on": 8
+                    },
+                    "goals": {
+                        "total": 5,
+                        "conceded": 0,
+                        "assists": null,
+                        "saves": null
+                    },
+                    "passes": {
+                        "total": 116,
+                        "key": 7,
+                        "accuracy": 35
+                    },
+                    "tackles": {
+                        "total": null,
+                        "blocks": null,
+                        "interceptions": null
+                    },
+                    "duels": {
+                        "total": 26,
+                        "won": 12
+                    },
+                    "dribbles": {
+                        "attempts": 12,
+                        "success": 8,
+                        "past": null
+                    },
+                    "fouls": {
+                        "drawn": 4,
+                        "committed": 2
+                    },
+                    "cards": {
+                        "yellow": 0,
+                        "yellowred": 0,
+                        "red": 0
+                    },
+                    "penalty": {
+                        "won": null,
+                        "commited": null,
+                        "scored": 2,
+                        "missed": 0,
+                        "saved": null
+                    }
+                },
+                {
+                    "team": {
+                        "id": 85,
+                        "name": "Paris Saint Germain",
+                        "logo": "https://media-3.api-sports.io/football/teams/85.png"
+                    },
+                    "league": {
+                        "id": 61,
+                        "name": "Ligue 1",
+                        "country": "France",
+                        "logo": "https://media-3.api-sports.io/football/leagues/61.png",
+                        "flag": "https://media-1.api-sports.io/flags/fr.svg",
+                        "season": 2022
+                    },
+                    "games": {
+                        "appearences": 34,
+                        "lineups": 32,
+                        "minutes": 2822,
+                        "number": null,
+                        "position": "Attacker",
+                        "rating": "7.417647",
+                        "captain": false
+                    },
+                    "substitutes": {
+                        "in": 2,
+                        "out": 6,
+                        "bench": 2
+                    },
+                    "shots": {
+                        "total": 112,
+                        "on": 79
+                    },
+                    "goals": {
+                        "total": 29,
+                        "conceded": 0,
+                        "assists": 5,
+                        "saves": null
+                    },
+                    "passes": {
+                        "total": 1290,
+                        "key": 56,
+                        "accuracy": 31
+                    },
+                    "tackles": {
+                        "total": 10,
+                        "blocks": null,
+                        "interceptions": 5
+                    },
+                    "duels": {
+                        "total": 316,
+                        "won": 132
+                    },
+                    "dribbles": {
+                        "attempts": 183,
+                        "success": 74,
+                        "past": null
+                    },
+                    "fouls": {
+                        "drawn": 40,
+                        "committed": 19
+                    },
+                    "cards": {
+                        "yellow": 6,
+                        "yellowred": 0,
+                        "red": 0
+                    },
+                    "penalty": {
+                        "won": null,
+                        "commited": null,
+                        "scored": 3,
+                        "missed": 2,
+                        "saved": null
+                    }
+                },
+                {
+                    "team": {
+                        "id": 85,
+                        "name": "Paris Saint Germain",
+                        "logo": "https://media-3.api-sports.io/football/teams/85.png"
+                    },
+                    "league": {
+                        "id": 61,
+                        "name": "Ligue 1",
+                        "country": "France",
+                        "logo": "https://media-2.api-sports.io/football/leagues/61.png",
+                        "flag": "https://media-1.api-sports.io/flags/fr.svg",
+                        "season": 2021
+                    },
+                    "games": {
+                        "appearences": 35,
+                        "lineups": 34,
+                        "minutes": 3032,
+                        "number": null,
+                        "position": "Attacker",
+                        "rating": "7.791428",
+                        "captain": false
+                    },
+                    "substitutes": {
+                        "in": 1,
+                        "out": 10,
+                        "bench": 1
+                    },
+                    "shots": {
+                        "total": 123,
+                        "on": 67
+                    },
+                    "goals": {
+                        "total": 28,
+                        "conceded": 0,
+                        "assists": 17,
+                        "saves": null
+                    },
+                    "passes": {
+                        "total": 1339,
+                        "key": 70,
+                        "accuracy": 31
+                    },
+                    "tackles": {
+                        "total": 11,
+                        "blocks": null,
+                        "interceptions": 5
+                    },
+                    "duels": {
+                        "total": 371,
+                        "won": 179
+                    },
+                    "dribbles": {
+                        "attempts": 204,
+                        "success": 111,
+                        "past": null
+                    },
+                    "fouls": {
+                        "drawn": 53,
+                        "committed": 28
+                    },
+                    "cards": {
+                        "yellow": 10,
+                        "yellowred": 0,
+                        "red": 0
+                    },
+                    "penalty": {
+                        "won": null,
+                        "commited": null,
+                        "scored": 4,
+                        "missed": 0,
+                        "saved": null
+                    }
+                },
+                {
+                    "team": {
+                        "id": 85,
+                        "name": "Paris Saint Germain",
+                        "logo": "https://media-3.api-sports.io/football/teams/85.png"
+                    },
+                    "league": {
+                        "id": 61,
+                        "name": "Ligue 1",
+                        "country": "France",
+                        "logo": "https://media-1.api-sports.io/football/leagues/61.png",
+                        "flag": "https://media-3.api-sports.io/flags/fr.svg",
+                        "season": 2020
+                    },
+                    "games": {
+                        "appearences": 31,
+                        "lineups": 27,
+                        "minutes": 2389,
+                        "number": null,
+                        "position": "Attacker",
+                        "rating": "7.393548",
+                        "captain": false
+                    },
+                    "substitutes": {
+                        "in": 4,
+                        "out": 11,
+                        "bench": 4
+                    },
+                    "shots": {
+                        "total": 90,
+                        "on": 55
+                    },
+                    "goals": {
+                        "total": 27,
+                        "conceded": 0,
+                        "assists": 7,
+                        "saves": null
+                    },
+                    "passes": {
+                        "total": 952,
+                        "key": 35,
+                        "accuracy": 24
+                    },
+                    "tackles": {
+                        "total": 4,
+                        "blocks": 1,
+                        "interceptions": 3
+                    },
+                    "duels": {
+                        "total": 318,
+                        "won": 137
+                    },
+                    "dribbles": {
+                        "attempts": 181,
+                        "success": 90,
+                        "past": null
+                    },
+                    "fouls": {
+                        "drawn": 38,
+                        "committed": 23
+                    },
+                    "cards": {
+                        "yellow": 5,
+                        "yellowred": 0,
+                        "red": 0
+                    },
+                    "penalty": {
+                        "won": null,
+                        "commited": null,
+                        "scored": 6,
+                        "missed": 0,
+                        "saved": null
+                    }
+                },
+                {
+                    "team": {
+                        "id": 85,
+                        "name": "Paris Saint Germain",
+                        "logo": "https://media-3.api-sports.io/football/teams/85.png"
+                    },
+                    "league": {
+                        "id": 61,
+                        "name": "Ligue 1",
+                        "country": "France",
+                        "logo": "https://media-3.api-sports.io/football/leagues/61.png",
+                        "flag": "https://media-1.api-sports.io/flags/fr.svg",
+                        "season": 2019
+                    },
+                    "games": {
+                        "appearences": 20,
+                        "lineups": 17,
+                        "minutes": 1515,
+                        "number": null,
+                        "position": "Attacker",
+                        "rating": "7.730000",
+                        "captain": false
+                    },
+                    "substitutes": {
+                        "in": 3,
+                        "out": 5,
+                        "bench": 3
+                    },
+                    "shots": {
+                        "total": 88,
+                        "on": 49
+                    },
+                    "goals": {
+                        "total": 18,
+                        "conceded": null,
+                        "assists": 5,
+                        "saves": null
+                    },
+                    "passes": {
+                        "total": 486,
+                        "key": 41,
+                        "accuracy": 80
+                    },
+                    "tackles": {
+                        "total": 6,
+                        "blocks": 0,
+                        "interceptions": 2
+                    },
+                    "duels": {
+                        "total": null,
+                        "won": null
+                    },
+                    "dribbles": {
+                        "attempts": 104,
+                        "success": 51,
+                        "past": null
+                    },
+                    "fouls": {
+                        "drawn": 22,
+                        "committed": 11
+                    },
+                    "cards": {
+                        "yellow": 0,
+                        "yellowred": 0,
+                        "red": 0
+                    },
+                    "penalty": {
+                        "won": 1,
+                        "commited": null,
+                        "scored": 0,
+                        "missed": 0,
+                        "saved": null
+                    }
+                },
+                {
+                    "team": {
+                        "id": 85,
+                        "name": "Paris Saint Germain",
+                        "logo": "https://media-1.api-sports.io/football/teams/85.png"
+                    },
+                    "league": {
+                        "id": 61,
+                        "name": "Ligue 1",
+                        "country": "France",
+                        "logo": "https://media-1.api-sports.io/football/leagues/61.png",
+                        "flag": "https://media-2.api-sports.io/flags/fr.svg",
+                        "season": 2018
+                    },
+                    "games": {
+                        "appearences": 29,
+                        "lineups": 24,
+                        "minutes": 2340,
+                        "number": null,
+                        "position": "Attacker",
+                        "rating": "7.871428",
+                        "captain": false
+                    },
+                    "substitutes": {
+                        "in": 5,
+                        "out": 1,
+                        "bench": 5
+                    },
+                    "shots": {
+                        "total": 122,
+                        "on": 68
+                    },
+                    "goals": {
+                        "total": 33,
+                        "conceded": null,
+                        "assists": 7,
+                        "saves": null
+                    },
+                    "passes": {
+                        "total": 591,
+                        "key": 48,
+                        "accuracy": 78
+                    },
+                    "tackles": {
+                        "total": 4,
+                        "blocks": 0,
+                        "interceptions": 4
+                    },
+                    "duels": {
+                        "total": 232,
+                        "won": 112
+                    },
+                    "dribbles": {
+                        "attempts": 115,
+                        "success": 64,
+                        "past": null
+                    },
+                    "fouls": {
+                        "drawn": 39,
+                        "committed": 19
+                    },
+                    "cards": {
+                        "yellow": 5,
+                        "yellowred": 0,
+                        "red": 1
+                    },
+                    "penalty": {
+                        "won": 3,
+                        "commited": null,
+                        "scored": 1,
+                        "missed": 0,
+                        "saved": null
+                    }
+                },
+                {
+                    "team": {
+                        "id": 85,
+                        "name": "Paris Saint Germain",
+                        "logo": "https://media-2.api-sports.io/football/teams/85.png"
+                    },
+                    "league": {
+                        "id": 61,
+                        "name": "Ligue 1",
+                        "country": "France",
+                        "logo": "https://media-3.api-sports.io/football/leagues/61.png",
+                        "flag": "https://media-3.api-sports.io/flags/fr.svg",
+                        "season": 2017
+                    },
+                    "games": {
+                        "appearences": 27,
+                        "lineups": 24,
+                        "minutes": 2097,
+                        "number": null,
+                        "position": "Attacker",
+                        "rating": "7.300000",
+                        "captain": false
+                    },
+                    "substitutes": {
+                        "in": 3,
+                        "out": 5,
+                        "bench": 5
+                    },
+                    "shots": {
+                        "total": 3,
+                        "on": 2
+                    },
+                    "goals": {
+                        "total": 13,
+                        "conceded": null,
+                        "assists": null,
+                        "saves": null
+                    },
+                    "passes": {
+                        "total": 19,
+                        "key": 0,
+                        "accuracy": 70
+                    },
+                    "tackles": {
+                        "total": null,
+                        "blocks": null,
+                        "interceptions": 1
+                    },
+                    "duels": {
+                        "total": 9,
+                        "won": 6
+                    },
+                    "dribbles": {
+                        "attempts": 6,
+                        "success": 4,
+                        "past": null
+                    },
+                    "fouls": {
+                        "drawn": 1,
+                        "committed": 0
+                    },
+                    "cards": {
+                        "yellow": 2,
+                        "yellowred": 0,
+                        "red": 0
+                    },
+                    "penalty": {
+                        "won": null,
+                        "commited": null,
+                        "scored": 0,
+                        "missed": 0,
+                        "saved": null
+                    }
+                },
+                {
+                    "team": {
+                        "id": 91,
+                        "name": "Monaco",
+                        "logo": "https://media-1.api-sports.io/football/teams/91.png"
+                    },
+                    "league": {
+                        "id": 61,
+                        "name": "Ligue 1",
+                        "country": "France",
+                        "logo": "https://media-3.api-sports.io/football/leagues/61.png",
+                        "flag": "https://media-2.api-sports.io/flags/fr.svg",
+                        "season": 2017
+                    },
+                    "games": {
+                        "appearences": 1,
+                        "lineups": 1,
+                        "minutes": 75,
+                        "number": null,
+                        "position": "Attacker",
+                        "rating": "7.300000",
+                        "captain": false
+                    },
+                    "substitutes": {
+                        "in": 0,
+                        "out": 1,
+                        "bench": 2
+                    },
+                    "shots": {
+                        "total": 3,
+                        "on": 2
+                    },
+                    "goals": {
+                        "total": 0,
+                        "conceded": null,
+                        "assists": null,
+                        "saves": null
+                    },
+                    "passes": {
+                        "total": 19,
+                        "key": 0,
+                        "accuracy": 70
+                    },
+                    "tackles": {
+                        "total": null,
+                        "blocks": null,
+                        "interceptions": 1
+                    },
+                    "duels": {
+                        "total": 9,
+                        "won": 6
+                    },
+                    "dribbles": {
+                        "attempts": 6,
+                        "success": 4,
+                        "past": null
+                    },
+                    "fouls": {
+                        "drawn": 1,
+                        "committed": 0
+                    },
+                    "cards": {
+                        "yellow": 0,
+                        "yellowred": 0,
+                        "red": 0
+                    },
+                    "penalty": {
+                        "won": null,
+                        "commited": null,
+                        "scored": 0,
+                        "missed": 0,
+                        "saved": null
+                    }
+                },
+                {
+                    "team": {
+                        "id": 91,
+                        "name": "Monaco",
+                        "logo": "https://media-1.api-sports.io/football/teams/91.png"
+                    },
+                    "league": {
+                        "id": 61,
+                        "name": "Ligue 1",
+                        "country": "France",
+                        "logo": "https://media-2.api-sports.io/football/leagues/61.png",
+                        "flag": "https://media-2.api-sports.io/flags/fr.svg",
+                        "season": 2016
+                    },
+                    "games": {
+                        "appearences": 29,
+                        "lineups": 17,
+                        "minutes": 1499,
+                        "number": null,
+                        "position": "Attacker",
+                        "rating": "7.223076",
+                        "captain": false
+                    },
+                    "substitutes": {
+                        "in": 12,
+                        "out": 12,
+                        "bench": 18
+                    },
+                    "shots": {
+                        "total": 52,
+                        "on": 35
+                    },
+                    "goals": {
+                        "total": 15,
+                        "conceded": null,
+                        "assists": 8,
+                        "saves": null
+                    },
+                    "passes": {
+                        "total": 247,
+                        "key": 32,
+                        "accuracy": 75
+                    },
+                    "tackles": {
+                        "total": 1,
+                        "blocks": 0,
+                        "interceptions": 4
+                    },
+                    "duels": {
+                        "total": 176,
+                        "won": 70
+                    },
+                    "dribbles": {
+                        "attempts": 58,
+                        "success": 32,
+                        "past": null
+                    },
+                    "fouls": {
+                        "drawn": 22,
+                        "committed": 9
+                    },
+                    "cards": {
+                        "yellow": 2,
+                        "yellowred": 0,
+                        "red": 0
+                    },
+                    "penalty": {
+                        "won": 3,
+                        "commited": null,
+                        "scored": 0,
+                        "missed": 0,
+                        "saved": null
+                    }
+                },
+                {
+                    "team": {
+                        "id": 91,
+                        "name": "Monaco",
+                        "logo": "https://media-1.api-sports.io/football/teams/91.png"
+                    },
+                    "league": {
+                        "id": 61,
+                        "name": "Ligue 1",
+                        "country": "France",
+                        "logo": "https://media-2.api-sports.io/football/leagues/61.png",
+                        "flag": "https://media-1.api-sports.io/flags/fr.svg",
+                        "season": 2015
+                    },
+                    "games": {
+                        "appearences": 11,
+                        "lineups": 2,
+                        "minutes": 288,
+                        "number": null,
+                        "position": "Attacker",
+                        "rating": "6.577777",
+                        "captain": false
+                    },
+                    "substitutes": {
+                        "in": 9,
+                        "out": 2,
+                        "bench": 11
+                    },
+                    "shots": {
+                        "total": 5,
+                        "on": 2
+                    },
+                    "goals": {
+                        "total": 1,
+                        "conceded": null,
+                        "assists": 1,
+                        "saves": null
+                    },
+                    "passes": {
+                        "total": 55,
+                        "key": 4,
+                        "accuracy": 71
+                    },
+                    "tackles": {
+                        "total": 7,
+                        "blocks": 0,
+                        "interceptions": 4
+                    },
+                    "duels": {
+                        "total": 51,
+                        "won": 20
+                    },
+                    "dribbles": {
+                        "attempts": 18,
+                        "success": 8,
+                        "past": null
+                    },
+                    "fouls": {
+                        "drawn": 4,
+                        "committed": 5
+                    },
+                    "cards": {
+                        "yellow": 1,
+                        "yellowred": 0,
+                        "red": 0
+                    },
+                    "penalty": {
+                        "won": null,
+                        "commited": null,
+                        "scored": 0,
+                        "missed": 0,
+                        "saved": null
+                    }
+                }
+            ]
+        },
+        {
+            "player": {
+                "id": 386287,
+                "name": "E. Mbapp\u00e9",
+                "firstname": "Ethan",
+                "lastname": "Mbapp\u00e9 Lottin",
+                "age": 17,
+                "birth": {
+                    "date": "2006-12-29",
+                    "place": null,
+                    "country": "France"
+                },
+                "nationality": "France",
+                "height": "176 cm",
+                "weight": null,
+                "injured": false,
+                "photo": "https://media-1.api-sports.io/football/players/386287.png"
+            },
+            "statistics": [
+                {
+                    "team": {
+                        "id": 85,
+                        "name": "Paris Saint Germain",
+                        "logo": "https://media-3.api-sports.io/football/teams/85.png"
+                    },
+                    "league": {
+                        "id": 61,
+                        "name": "Ligue 1",
+                        "country": "France",
+                        "logo": "https://media-2.api-sports.io/football/leagues/61.png",
+                        "flag": "https://media-2.api-sports.io/flags/fr.svg",
+                        "season": 2023
+                    },
+                    "games": {
+                        "appearences": null,
+                        "lineups": null,
+                        "minutes": null,
+                        "number": null,
+                        "position": "Midfielder",
+                        "rating": null,
+                        "captain": false
+                    },
+                    "substitutes": {
+                        "in": null,
+                        "out": null,
+                        "bench": null
+                    },
+                    "shots": {
+                        "total": null,
+                        "on": null
+                    },
+                    "goals": {
+                        "total": null,
+                        "conceded": null,
+                        "assists": null,
+                        "saves": null
+                    },
+                    "passes": {
+                        "total": null,
+                        "key": null,
+                        "accuracy": null
+                    },
+                    "tackles": {
+                        "total": null,
+                        "blocks": null,
+                        "interceptions": null
+                    },
+                    "duels": {
+                        "total": null,
+                        "won": null
+                    },
+                    "dribbles": {
+                        "attempts": null,
+                        "success": null,
+                        "past": null
+                    },
+                    "fouls": {
+                        "drawn": null,
+                        "committed": null
+                    },
+                    "cards": {
+                        "yellow": null,
+                        "yellowred": null,
+                        "red": null
+                    },
+                    "penalty": {
+                        "won": null,
+                        "commited": null,
+                        "scored": null,
+                        "missed": null,
+                        "saved": null
+                    }
+                }
+            ]
+        }
+    ]
+}
