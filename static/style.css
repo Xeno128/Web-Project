@@ -295,3 +295,74 @@ a {
     font-family: 'Rubik', sans-serif;
     color: #babcd2;
 }
+
+.main-player-box {
+    height: 1100px;
+    width: 100%;
+    top: 100px;
+    padding: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: rgb(127, 117, 117) 3px solid;
+    box-shadow: 0 0 20px 1px #9809c8;
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    column-gap: 100px;
+}
+
+.info-1 {
+    height: inherit;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.info-1 img {
+    height: 100px;
+    width: 100px;
+}
+
+.player-pic {
+    width: 40vw;
+    height: 65vh;
+    padding: 0;
+    /* border: #162938 3px solid; */
+    box-shadow: 0 0 8px 1px #1b77ac;
+}
+
+.player-pic img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.info-2 {
+    width: auto;
+    height: 1px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    font-size: 40px;
+    left: -30px;
+}
+
+.info-2 span {
+    color: antiquewhite;
+}
+
+.info-2 i {
+    position: relative;
+    left: 10px;
+}
+
+.info-2 h3 {
+    font-family: 'Inter', sans-serif;
+    margin: 2px;
+}
