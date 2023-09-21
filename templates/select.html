@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/logo.png') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Montserrat:ital,wght@1,900&family=Rubik:ital,wght@1,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Rubik:ital,wght@1,500&display=swap" rel="stylesheet">
@@ -15,10 +15,10 @@
     <header class="navigation">
         <h2>Football-Stats</h2>
         <nav class="nav-bar">
-            <a href="index.html">Home</a>
-            <a href="index.html#about">About</a>
+            <a href="/">Home</a>
+            <a href="/#about">About</a>
             <!-- <a href="#">Service</a> -->
-            <a href="search.html">Search</a>
+            <a href="/select">Search</a>
             <button class="login">Login</button>
         </nav>
     </header>
@@ -30,38 +30,37 @@
 
         <div class="league-box">
             <ul>
-                <a href="search.html"><li>
-                    <img src="img/leagues/BL.png">
+                <a href="/search?id="><li>
+                    <img src="{{ url_for('static', filename='img/leagues/BL.png') }}">
                     <h2>Bundesliga</h2>
                 </li></a>
-                <a href="search.html"><li>
-                    <img src="img/leagues/PL.png">
+                <a href="/search?id="><li>
+                    <img src="{{ url_for('static', filename='img/leagues/PL.png') }}">
                     <h2>Premier League</h2>
                 </li></a>
             </ul>
             <ul>
-                <a href="search.html"><li>
-                    <img src="img/leagues/L1.png">
+                <a href="/search?id="><li>
+                    <img src="{{ url_for('static', filename='img/leagues/L1.png') }}">
                     <h2>Ligue 1</h2>
                 </li></a>
-                <a href="search.html"><li>
-                    <img src="img/leagues/LL.png">
+                <a href="/search?id="><li>
+                    <img src="{{ url_for('static', filename='img/leagues/LL.png') }}">
                     <h2>LaLiga</h2>
                 </li></a>
             </ul>
             <ul>
-                <a href="search.html"><li>
-                    <img src="img/leagues/SAL.png">
+                <a href="/search?id="><li>
+                    <img src="{{ url_for('static', filename='img/leagues/SAL.png') }}">
                     <h2>Serie A</h2>
                 </li></a>
-                <a href="search.html"><li>
-                    <img src="img/leagues/EL.png">
-                    <h2 id="exeption">Erdevise</h2>
+                <a href="/search?id="><li>
+                    <img src="{{ url_for('static', filename='img/leagues/EL.png') }}">
+                    <h2>Erdevise</h2>
                 </li></a>
             </ul>
         </div>
 
     </div>
-
 </body>
 </html>

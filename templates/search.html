@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/logo.png') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Montserrat:ital,wght@1,900&family=Rubik:ital,wght@1,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Rubik:ital,wght@1,500&display=swap" rel="stylesheet">
@@ -15,10 +15,10 @@
     <header class="navigation">
         <h2>Football-Stats</h2>
         <nav class="nav-bar">
-            <a href="index.html">Home</a>
-            <a href="index.html#about">About</a>
+            <a href="/">Home</a>
+            <a href="/#about">About</a>
             <!-- <a href="#">Service</a> -->
-            <a href="select.html">Search</a>
+            <a href="/select">Search</a>
             <button class="login">Login</button>
         </nav>
     </header>
@@ -32,7 +32,7 @@
         <div class="container">
             <form action="" class="search-bar">
                 <input type="text" placeholder="Karim Benzema" name="q">
-                <button type="submit"><img src="img/search.png" /></button>
+                <button type="submit"><img src="{{ url_for('static', filename='img/search.png') }}" /></button>
             </form>
         </div>
 
@@ -40,32 +40,30 @@
             <div class="player-box">
                 <div id="player-1">
                     <h2>Ronaldo</h2>
-                    <img src="img/players/ronaldo.png" alt="Football Player"/>
+                    <img src="{{ url_for('static', filename='img/players/ronaldo.png') }}" alt="Football Player"/>
                 </div>
                 <div id="player-2">
                     <h2>Kylian Mbappe</h2>
-                    <img src="img/players/mbappe.png" alt="Football Player"/>
+                    <img src="{{ url_for('static', filename='img/players/mbappe.png') }}" alt="Football Player"/>
                 </div>
                 <div>
                     <h2>Haaland</h2>
-                    <img src="img/players/haaland.png" alt="Football Player"/>
+                    <img src="{{ url_for('static', filename='img/players/Haaland.png') }}" alt="Football Player"/>
                 </div>
                 <div>
                     <h2>Loïs Openda</h2>
-                    <img src="img/players/openda.png" alt="Football Player"/>
+                    <img src="{{ url_for('static', filename='img/players/openda.png') }}" alt="Football Player"/>
                 </div>
                 <div>
                     <h2>Jamie Vardy</h2>
-                    <img src="img/players/vardy.png" alt="Football Player"/>
+                    <img src="{{ url_for('static', filename='img/players/vardy.png') }}" alt="Football Player"/>
                 </div>
                 <div>
                     <h2>Sadio Mané</h2>
-                    <img src="img/players/mane.png" alt="Football Player"/>
+                    <img src="{{ url_for('static', filename='img/players/mane.png') }}" alt="Football Player"/>
                 </div>
             </div>
         </div>
     </div>
-
-
 </body>
 </html>

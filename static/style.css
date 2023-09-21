@@ -134,8 +134,8 @@ a {
     padding-top: 0;
     padding-right: 2rem;
     height: 50vh;
-    background: radial-gradient(#222296, #1892b4);
-    background-repeat: no-repeat;
+    border: #58629b 2px;
+    box-shadow: 0 0 20px 5px #adb1b3;
     border-radius: 30px;
 }
 

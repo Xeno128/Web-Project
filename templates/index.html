@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/logo.png') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Montserrat:ital,wght@1,900&family=Rubik:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Rubik:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>Football Stats</title>
+</head>
+<body>
+    <header class="navigation">
+        <h2>Football-Stats</h2>
+        <nav class="nav-bar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <!-- <a href="#">Service</a> -->
+            <a href="/select">Search</a>
+            <button class="login">Login</button>
+        </nav>
+    </header>
+
+    <div id="home" class="top-part">
+        <h1>Football Stats</h1>
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Website logo" />
+        <p>Using Advanced API, We Bring You The Most Accurate Football Player Statistics </p>
+    </div>
+    
+    <div id="about" class="about">
+        <div class="about-text">
+            <h2>About</h2>
+            <p>Football Stats Uses <a href="https://www.api-football.com/" target="_blank" style="text-decoration: none;">API</a> To Display Player Statistics From Many Different Leagues Around The World. Simply Click "Search" In The Menu Above, Select Your Desired League, And Search The Player You Want To View! You Can Select A Player From The Recommended Players List.</p>
+        </div>
+
+        <div class="leagues">
+            <ul>
+                <li><img src="{{ url_for('static', filename='img/leagues/PL.png') }}" alt="Premier League"/>
+                <img src="{{ url_for('static', filename='img/leagues/BL.png') }}" alt="Bundesliga"/></li>
+                <li><img src="{{ url_for('static', filename='img/leagues/LL.png') }}" alt="LaLiga"/>
+                <img src="{{ url_for('static', filename='img/leagues/SAL.png') }}" alt="Serie A"/></li>
+                <li><img src="{{ url_for('static', filename='img/leagues/L1.png') }}" alt="Ligue 1"/>
+                <img src="{{ url_for('static', filename='img/leagues/EL.png') }}" alt="Eredivisie"/></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
