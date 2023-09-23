@@ -26,25 +26,25 @@
 
     <div class="main-player-box">
             <div class="info-1">
-                <img src="https://media-1.api-sports.io/football/teams/85.png"/><h1>{{player}}</h1><img src="https://media-1.api-sports.io/football/teams/85.png"/>
+                <img src="{{player.team_logo}}"/><h1>{{player.player_name}}</h1><img src="{{player.team_logo}}"/>
             </div>
         <div class="wrapper">
             <div class="player-pic">
-                <img src="https://media-1.api-sports.io/football/players/278.png" alt="Player Image"/>
+                <img src="{{player.player_photo}}" alt="Player Image"/>
             </div>
             <div class="info-2">
-                <h3 style="color: wheat;">Age: <span>32</span><i class="fa-solid fa-bandage" style="color: wheat;"></i></h3>
-                <h3 style="color: green;">Height: <span>178 (cm)</span><i class="fa-solid fa-up-down" style="color: green;"></i></h3>
-                <h3 style="color: dimgray;">Weight: <span>82 (kg)</span><i class="fa-solid fa-weight-hanging" style="color: dimgray;"></i></h3>
-                <h3 style="color: chocolate;">Position: <span>Attacker</span><i class="fa-solid fa-map-location-dot" style="color: chocolate;"></i></h3>
-                <h3 style="color: blue;">Nationality: <span>France</span><i class="fa-solid fa-globe" style="color: blue;"></i></h3>
-                <h3 style="color: fuchsia;">Team: <span>Paris Saint Germain</span><i class="fa-solid fa-people-group" style="color: fuchsia;"></i></h3>
-                <h3 style="color: gold;">Appearances: <span>972</span><i class="fa-solid fa-star" style="color: gold;"></i></h3>
-                <h3 style="color: aquamarine;">Goals: <span>198</span><i class="fa fa-soccer-ball-o" style="color: aquamarine;"></i></h3>
-                <h3 style="color:chartreuse;">Penalty Accuracy: <span>100 Out Of 192</span><i class="fa-solid fa-circle-dot" style="color: chartreuse;"></i></h3>
-                <h3 style="color: purple;">Assists: <span>7</span><i class="fa-solid fa-handshake-angle" style="color: purple;"></i></h3>
-                <h3 style="color: yellow;">Yellow Cards: <span>7</span><i class="fa-solid fa-circle-exclamation" style="color: yellow;"></i></h3>
-                <h3 style="color: red;">Red Cards: <span>7</span><i class="fa-solid fa-triangle-exclamation" style="color: red;"></i></h3>
+                <h3 style="color: wheat;">Age: <span>{{player.player_age}}</span><i class="fa-solid fa-bandage" style="color: wheat;"></i></h3>
+                <h3 style="color: green;">Height: <span>{{player.player_height}}</span><i class="fa-solid fa-up-down" style="color: green;"></i></h3>
+                <h3 style="color: dimgray;">Weight: <span>{{player.player_weight}}</span><i class="fa-solid fa-weight-hanging" style="color: dimgray;"></i></h3>
+                <h3 style="color: chocolate;">Position: <span>{{player.player_position}}</span><i class="fa-solid fa-map-location-dot" style="color: chocolate;"></i></h3>
+                <h3 style="color: blue;">Nationality: <span>{{player.player_nationality}}</span><i class="fa-solid fa-globe" style="color: blue;"></i></h3>
+                <h3 style="color: fuchsia;">Team: <span>{{player.team_name}}</span><i class="fa-solid fa-people-group" style="color: fuchsia;"></i></h3>
+                <h3 style="color: gold;">Appearances: <span>{{player.player_appearances}}</span><i class="fa-solid fa-star" style="color: gold;"></i></h3>
+                <h3 style="color: aquamarine;">Goals: <span>{{player.player_goals}}</span><i class="fa fa-soccer-ball-o" style="color: aquamarine;"></i></h3>
+                <h3 style="color:chartreuse;">Penalty Accuracy: <span>{{player.player_pen_accuracy}}</span><i class="fa-solid fa-circle-dot" style="color: chartreuse;"></i></h3>
+                <h3 style="color: purple;">Assists: <span>{{player.player_assists}}</span><i class="fa-solid fa-handshake-angle" style="color: purple;"></i></h3>
+                <h3 style="color: yellow;">Yellow Cards: <span>{{player.player_yellows}}</span><i class="fa-solid fa-circle-exclamation" style="color: yellow;"></i></h3>
+                <h3 style="color: red;">Red Cards: <span>{{player.player_reds}}</span><i class="fa-solid fa-triangle-exclamation" style="color: red;"></i></h3>
         </div>
     </div>
 
