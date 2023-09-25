@@ -1,0 +1,480 @@
+{
+    "get": "players",
+    "parameters": {
+        "search": "alisson",
+        "league": "39"
+    },
+    "errors": [],
+    "results": 1,
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "response": [
+        {
+            "player": {
+                "id": 280,
+                "name": "Alisson Becker",
+                "firstname": "Alisson Rams\u00e9s",
+                "lastname": "Becker",
+                "age": 31,
+                "birth": {
+                    "date": "1992-10-02",
+                    "place": "Novo Hamburgo",
+                    "country": "Brazil"
+                },
+                "nationality": "Brazil",
+                "height": "193 cm",
+                "weight": "91 kg",
+                "injured": false,
+                "photo": "https://media-4.api-sports.io/football/players/280.png"
+            },
+            "statistics": [
+                {
+                    "team": {
+                        "id": 40,
+                        "name": "Liverpool",
+                        "logo": "https://media-4.api-sports.io/football/teams/40.png"
+                    },
+                    "league": {
+                        "id": 39,
+                        "name": "Premier League",
+                        "country": "England",
+                        "logo": "https://media-4.api-sports.io/football/leagues/39.png",
+                        "flag": "https://media-4.api-sports.io/flags/gb.svg",
+                        "season": 2023
+                    },
+                    "games": {
+                        "appearences": 5,
+                        "lineups": 5,
+                        "minutes": 450,
+                        "number": null,
+                        "position": "Goalkeeper",
+                        "rating": "7.280000",
+                        "captain": false
+                    },
+                    "substitutes": {
+                        "in": 0,
+                        "out": 0,
+                        "bench": 0
+                    },
+                    "shots": {
+                        "total": null,
+                        "on": null
+                    },
+                    "goals": {
+                        "total": 0,
+                        "conceded": 4,
+                        "assists": null,
+                        "saves": 19
+                    },
+                    "passes": {
+                        "total": 173,
+                        "key": null,
+                        "accuracy": 28
+                    },
+                    "tackles": {
+                        "total": null,
+                        "blocks": null,
+                        "interceptions": null
+                    },
+                    "duels": {
+                        "total": 3,
+                        "won": 1
+                    },
+                    "dribbles": {
+                        "attempts": null,
+                        "success": null,
+                        "past": null
+                    },
+                    "fouls": {
+                        "drawn": null,
+                        "committed": 1
+                    },
+                    "cards": {
+                        "yellow": 1,
+                        "yellowred": 0,
+                        "red": 0
+                    },
+                    "penalty": {
+                        "won": null,
+                        "commited": null,
+                        "scored": 0,
+                        "missed": 0,
+                        "saved": 0
+                    }
+                },
+                {
+                    "team": {
+                        "id": 40,
+                        "name": "Liverpool",
+                        "logo": "https://media-4.api-sports.io/football/teams/40.png"
+                    },
+                    "league": {
+                        "id": 39,
+                        "name": "Premier League",
+                        "country": "England",
+                        "logo": "https://media-4.api-sports.io/football/leagues/39.png",
+                        "flag": "https://media-4.api-sports.io/flags/gb.svg",
+                        "season": 2022
+                    },
+                    "games": {
+                        "appearences": 37,
+                        "lineups": 37,
+                        "minutes": 3330,
+                        "number": null,
+                        "position": "Goalkeeper",
+                        "rating": "7.086486",
+                        "captain": false
+                    },
+                    "substitutes": {
+                        "in": 0,
+                        "out": 0,
+                        "bench": 0
+                    },
+                    "shots": {
+                        "total": null,
+                        "on": null
+                    },
+                    "goals": {
+                        "total": 0,
+                        "conceded": 43,
+                        "assists": 1,
+                        "saves": 108
+                    },
+                    "passes": {
+                        "total": 1239,
+                        "key": 1,
+                        "accuracy": 27
+                    },
+                    "tackles": {
+                        "total": null,
+                        "blocks": null,
+                        "interceptions": null
+                    },
+                    "duels": {
+                        "total": 23,
+                        "won": 18
+                    },
+                    "dribbles": {
+                        "attempts": 2,
+                        "success": 2,
+                        "past": null
+                    },
+                    "fouls": {
+                        "drawn": 5,
+                        "committed": 1
+                    },
+                    "cards": {
+                        "yellow": 1,
+                        "yellowred": 0,
+                        "red": 0
+                    },
+                    "penalty": {
+                        "won": null,
+                        "commited": null,
+                        "scored": 0,
+                        "missed": 0,
+                        "saved": 1
+                    }
+                },
+                {
+                    "team": {
+                        "id": 40,
+                        "name": "Liverpool",
+                        "logo": "https://media-4.api-sports.io/football/teams/40.png"
+                    },
+                    "league": {
+                        "id": 39,
+                        "name": "Premier League",
+                        "country": "England",
+                        "logo": "https://media-4.api-sports.io/football/leagues/39.png",
+                        "flag": "https://media-4.api-sports.io/flags/gb.svg",
+                        "season": 2021
+                    },
+                    "games": {
+                        "appearences": 36,
+                        "lineups": 36,
+                        "minutes": 3240,
+                        "number": null,
+                        "position": "Goalkeeper",
+                        "rating": "7.108333",
+                        "captain": false
+                    },
+                    "substitutes": {
+                        "in": 0,
+                        "out": 0,
+                        "bench": 0
+                    },
+                    "shots": {
+                        "total": null,
+                        "on": null
+                    },
+                    "goals": {
+                        "total": 0,
+                        "conceded": 24,
+                        "assists": 1,
+                        "saves": 76
+                    },
+                    "passes": {
+                        "total": 1177,
+                        "key": 1,
+                        "accuracy": 27
+                    },
+                    "tackles": {
+                        "total": 3,
+                        "blocks": null,
+                        "interceptions": null
+                    },
+                    "duels": {
+                        "total": 25,
+                        "won": 22
+                    },
+                    "dribbles": {
+                        "attempts": 1,
+                        "success": 1,
+                        "past": null
+                    },
+                    "fouls": {
+                        "drawn": 2,
+                        "committed": null
+                    },
+                    "cards": {
+                        "yellow": 0,
+                        "yellowred": 0,
+                        "red": 0
+                    },
+                    "penalty": {
+                        "won": null,
+                        "commited": null,
+                        "scored": 0,
+                        "missed": 0,
+                        "saved": 1
+                    }
+                },
+                {
+                    "team": {
+                        "id": 40,
+                        "name": "Liverpool",
+                        "logo": "https://media-4.api-sports.io/football/teams/40.png"
+                    },
+                    "league": {
+                        "id": 39,
+                        "name": "Premier League",
+                        "country": "England",
+                        "logo": "https://media-4.api-sports.io/football/leagues/39.png",
+                        "flag": "https://media-4.api-sports.io/flags/gb.svg",
+                        "season": 2020
+                    },
+                    "games": {
+                        "appearences": 33,
+                        "lineups": 33,
+                        "minutes": 2970,
+                        "number": null,
+                        "position": "Goalkeeper",
+                        "rating": "6.945454",
+                        "captain": false
+                    },
+                    "substitutes": {
+                        "in": 0,
+                        "out": 0,
+                        "bench": 0
+                    },
+                    "shots": {
+                        "total": 1,
+                        "on": 1
+                    },
+                    "goals": {
+                        "total": 1,
+                        "conceded": 32,
+                        "assists": null,
+                        "saves": 84
+                    },
+                    "passes": {
+                        "total": 989,
+                        "key": null,
+                        "accuracy": 25
+                    },
+                    "tackles": {
+                        "total": 3,
+                        "blocks": null,
+                        "interceptions": 2
+                    },
+                    "duels": {
+                        "total": 25,
+                        "won": 22
+                    },
+                    "dribbles": {
+                        "attempts": 2,
+                        "success": 2,
+                        "past": null
+                    },
+                    "fouls": {
+                        "drawn": 5,
+                        "committed": 1
+                    },
+                    "cards": {
+                        "yellow": 1,
+                        "yellowred": 0,
+                        "red": 0
+                    },
+                    "penalty": {
+                        "won": null,
+                        "commited": null,
+                        "scored": 0,
+                        "missed": 0,
+                        "saved": 0
+                    }
+                },
+                {
+                    "team": {
+                        "id": 40,
+                        "name": "Liverpool",
+                        "logo": "https://media-4.api-sports.io/football/teams/40.png"
+                    },
+                    "league": {
+                        "id": 39,
+                        "name": "Premier League",
+                        "country": "England",
+                        "logo": "https://media-4.api-sports.io/football/leagues/39.png",
+                        "flag": "https://media-4.api-sports.io/flags/gb.svg",
+                        "season": 2019
+                    },
+                    "games": {
+                        "appearences": 29,
+                        "lineups": 29,
+                        "minutes": 2545,
+                        "number": null,
+                        "position": "Goalkeeper",
+                        "rating": "6.900000",
+                        "captain": false
+                    },
+                    "substitutes": {
+                        "in": 0,
+                        "out": 1,
+                        "bench": 0
+                    },
+                    "shots": {
+                        "total": 0,
+                        "on": 0
+                    },
+                    "goals": {
+                        "total": 0,
+                        "conceded": 25,
+                        "assists": 1,
+                        "saves": 58
+                    },
+                    "passes": {
+                        "total": 681,
+                        "key": 1,
+                        "accuracy": 85
+                    },
+                    "tackles": {
+                        "total": null,
+                        "blocks": 0,
+                        "interceptions": 1
+                    },
+                    "duels": {
+                        "total": 9,
+                        "won": 7
+                    },
+                    "dribbles": {
+                        "attempts": 0,
+                        "success": 0,
+                        "past": null
+                    },
+                    "fouls": {
+                        "drawn": 1,
+                        "committed": 1
+                    },
+                    "cards": {
+                        "yellow": 0,
+                        "yellowred": 0,
+                        "red": 1
+                    },
+                    "penalty": {
+                        "won": null,
+                        "commited": null,
+                        "scored": 0,
+                        "missed": 0,
+                        "saved": 0
+                    }
+                },
+                {
+                    "team": {
+                        "id": 40,
+                        "name": "Liverpool",
+                        "logo": "https://media-4.api-sports.io/football/teams/40.png"
+                    },
+                    "league": {
+                        "id": 39,
+                        "name": "Premier League",
+                        "country": "England",
+                        "logo": "https://media-4.api-sports.io/football/leagues/39.png",
+                        "flag": "https://media-4.api-sports.io/flags/gb.svg",
+                        "season": 2018
+                    },
+                    "games": {
+                        "appearences": 38,
+                        "lineups": 38,
+                        "minutes": 3420,
+                        "number": null,
+                        "position": "Goalkeeper",
+                        "rating": "6.992105",
+                        "captain": false
+                    },
+                    "substitutes": {
+                        "in": 0,
+                        "out": 0,
+                        "bench": 0
+                    },
+                    "shots": {
+                        "total": 0,
+                        "on": 0
+                    },
+                    "goals": {
+                        "total": 0,
+                        "conceded": 22,
+                        "assists": null,
+                        "saves": 76
+                    },
+                    "passes": {
+                        "total": 864,
+                        "key": 0,
+                        "accuracy": 80
+                    },
+                    "tackles": {
+                        "total": 2,
+                        "blocks": 0,
+                        "interceptions": 1
+                    },
+                    "duels": {
+                        "total": 18,
+                        "won": 16
+                    },
+                    "dribbles": {
+                        "attempts": 2,
+                        "success": 2,
+                        "past": null
+                    },
+                    "fouls": {
+                        "drawn": 1,
+                        "committed": 0
+                    },
+                    "cards": {
+                        "yellow": 1,
+                        "yellowred": 0,
+                        "red": 0
+                    },
+                    "penalty": {
+                        "won": null,
+                        "commited": null,
+                        "scored": 0,
+                        "missed": 0,
+                        "saved": 0
+                    }
+                }
+            ]
+        }
+    ]
+}
