@@ -26,10 +26,6 @@ player_url = "https://v3.football.api-sports.io/players"
 firebase = pyrebase.initialize_app(firebaseConfig)
 db = firebase.database()
 
-# player = Player(85, "https://media-1.api-sports.io/football/teams/160.png", "Paris Saint Germain", 278, "K. Mbapp\u00e9", "https://media-1.api-sports.io/football/players/125.png", 25, "178 cm", "75 kg", "Attacker", "France", 252, 163, "100 Out Of 153", 182, 12, 2)
-# db.child("players").child(player.player_id).set(player.player_to_dict())
-# db.child("teams").child(player.team_id).set(player.team_to_dict())
-
 app = Flask(__name__)
 app.secret_key = '3d6f45a5fc12445dbac2f59c3b6c7cb1'
 app.static_folder = 'static'
@@ -106,7 +102,13 @@ def get_data(obj: Player):
     except:
         raise Exception("Cant Get Data")
     return player.val(), team.val()
-    
+
+def validate_input(text: str):
+    final = text
+    if final.count(' ') > 0:
+        final = text.split(' ')[1]
+    return final
+
 
 @app.route("/")
 def home():
@@ -120,8 +122,9 @@ def select():
 def search():
     if request.method == "POST":
         queue = request.form['nm']
+        fixed_queue = validate_input(queue)
         league = request.args.get("id")
-        return redirect(url_for("psearch", league_id=league, player_name=queue))
+        return redirect(url_for("psearch", league_id=league, player_name=fixed_queue))
     else:
         return render_template("search.html")    
 
