@@ -1,7 +1,12 @@
 from flask import *
 from classes import *
+import random
 import pyrebase
-import requests
+from flask_apscheduler import APScheduler
+
+#async
+import aiohttp
+import asyncio
 
 firebaseConfig = {
   "apiKey": "AIzaSyCKRxeLwSq9giQXpo7pOQ-UaAy4i_UfFZQ",
@@ -20,18 +25,63 @@ headers = {
 	"X-RapidAPI-Host": "https://v3.football.api-sports.io/"
 }
 
-player_url = "https://v3.football.api-sports.io/players"
-
 # initializing firebase database
 firebase = pyrebase.initialize_app(firebaseConfig)
 db = firebase.database()
 
+# flask startup
 app = Flask(__name__)
 app.secret_key = '3d6f45a5fc12445dbac2f59c3b6c7cb1'
 app.static_folder = 'static'
 
+# scheduler startup
+scheduler = APScheduler()
+scheduler.api_enabled = False
+scheduler.init_app(app)
+
+@scheduler.task('interval', id='update_database', seconds=300)
+def job1():
+    league_ids = [78, 39, 61, 140, 135, 88, 383, 382]
+    
+    player_response = asyncio.run(RequestRandomPlayers(league_ids[random.randint(0, len(league_ids)-1)]))
+    
+    if player_response['results'] == 0:
+        return
+    
+    player_obj = translate_response(player_response, index=random.randint(0, len(player_response['response'])-1))
+
+    try:
+        check_data(player_obj)
+        print('Successfuly Updated The Database With The Player: '+player_obj.player_name)
+    except:
+        print("Error Loading Player Into Database Asynchronously. Continuing")
+        return
+
+# asynchronous function for making a request
+async def RequestPlayer(player_name, league_id):
+
+    async with aiohttp.ClientSession() as session:
+
+        player_url = "https://v3.football.api-sports.io/players"
+        player_quarystring = {"search":player_name, "league":league_id}
+        
+        async with session.get(player_url, headers=headers, params=player_quarystring) as resp:
+            player = await resp.json()
+            return player
+
+async def RequestRandomPlayers(league_id):
+
+    async with aiohttp.ClientSession() as session:
+
+        player_url = "https://v3.football.api-sports.io/players"
+        player_quarystring = {"league":league_id, "season": "2023"}
+        
+        async with session.get(player_url, headers=headers, params=player_quarystring) as resp:
+            players = await resp.json()
+            return players
+
 # accepts json response
-def translate_response(response: dict):
+def translate_response(response: dict, index = 0):
     
     appearences = 0
     goals = 0
@@ -43,7 +93,7 @@ def translate_response(response: dict):
     goals_conceded = 0
     saves = 0
     pen_saves = 0
-    for i in response['response'][0]['statistics']:
+    for i in response['response'][index]['statistics']:
         if i['games']['appearences'] != None: appearences += i['games']['appearences']
         if i['goals']['total'] != None: goals += i['goals']['total']
         if i['penalty']['missed'] != None: pen_missed += i['penalty']['missed']
@@ -57,17 +107,17 @@ def translate_response(response: dict):
         if i['penalty']['saved'] != None: pen_saves += i['penalty']['saved']
     
     
-    player = Player(response['response'][0]['statistics'][0]['team']['id'], 
-                    response['response'][0]['statistics'][0]['team']['logo'],
-                    response['response'][0]['statistics'][0]['team']['name'],
-                    response['response'][0]['player']['id'],
-                    response['response'][0]['player']['name'],
-                    response['response'][0]['player']['photo'],
-                    response['response'][0]['player']['age'],
-                    response['response'][0]['player']['height'],
-                    response['response'][0]['player']['weight'],
-                    response['response'][0]['statistics'][0]['games']['position'],
-                    response['response'][0]['player']['nationality'],
+    player = Player(response['response'][index]['statistics'][0]['team']['id'], 
+                    response['response'][index]['statistics'][0]['team']['logo'],
+                    response['response'][index]['statistics'][0]['team']['name'],
+                    response['response'][index]['player']['id'],
+                    response['response'][index]['player']['name'],
+                    response['response'][index]['player']['photo'],
+                    response['response'][index]['player']['age'],
+                    response['response'][index]['player']['height'],
+                    response['response'][index]['player']['weight'],
+                    response['response'][index]['statistics'][0]['games']['position'],
+                    response['response'][index]['player']['nationality'],
                     appearences,
                     goals,
                     f'{pen_scored} Out Of {pen_scored+pen_missed}',
@@ -130,13 +180,12 @@ def search():
 
 @app.route("/player-search/<league_id>/<player_name>") 
 def psearch(player_name, league_id):
-    player_quarystring= {"search":player_name, "league":league_id}
-    player_response = requests.get(player_url, headers=headers, params=player_quarystring)
+    player_response = asyncio.run(RequestPlayer(player_name, league_id))
     
-    if player_response.json()['results'] == 0:
+    if player_response['results'] == 0:
         return "<h1>Player Not Found!</h1>"
     
-    player_obj = translate_response(player_response.json())
+    player_obj = translate_response(player_response)
 
     try:
         check_data(player_obj)
@@ -147,4 +196,5 @@ def psearch(player_name, league_id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    scheduler.start()
+    app.run(debug=False)
