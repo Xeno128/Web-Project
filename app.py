@@ -39,6 +39,12 @@ scheduler = APScheduler()
 scheduler.api_enabled = False
 scheduler.init_app(app)
 
+#scheduler on/off switch for debug
+on_switch = False
+
+#league names by id
+league_names = {"78": "Bundesliga", "39": "Premier League", "61": "Ligue 1", "140": "La Liga", "135": "Serie A", "88": "Eredivisie", "383": "Ligat Ha'al", "382": "Liga Leumit"}
+
 @scheduler.task('interval', id='update_database', seconds=300)
 def job1():
     league_ids = [78, 39, 61, 140, 135, 88, 383, 382]
@@ -170,13 +176,15 @@ def select():
 
 @app.route("/search/", methods=["POST", "GET"])
 def search():
+    league = request.args.get("id")
+    if league not in league_names.keys(): return "<h1>Incorrect League ID!</h1>"
+    
     if request.method == "POST":
         queue = request.form['nm']
         fixed_queue = validate_input(queue)
-        league = request.args.get("id")
         return redirect(url_for("psearch", league_id=league, player_name=fixed_queue))
     else:
-        return render_template("search.html")    
+        return render_template("search.html", league_name=league_names[league])    
 
 @app.route("/player-search/<league_id>/<player_name>") 
 def psearch(player_name, league_id):
@@ -194,7 +202,6 @@ def psearch(player_name, league_id):
         return "<h1>Error</h1>"
     return render_template("player.html", player=player, team=team)
 
-
 if __name__ == "__main__":
-    scheduler.start()
+    if on_switch: scheduler.start()
     app.run(debug=False)
