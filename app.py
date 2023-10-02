@@ -3,6 +3,7 @@ from classes import *
 import random
 import pyrebase
 from flask_apscheduler import APScheduler
+from flask_login import *
 
 #async
 import aiohttp
@@ -19,7 +20,7 @@ firebaseConfig = {
   "measurementId": "G-N7L05EM3XD"
 };
 
-#api headers
+# api headers
 headers = {
 	"X-RapidAPI-Key": "6e71f3c849b6b6ed48729a6a9c7272f4",
 	"X-RapidAPI-Host": "https://v3.football.api-sports.io/"
@@ -39,10 +40,21 @@ scheduler = APScheduler()
 scheduler.api_enabled = False
 scheduler.init_app(app)
 
-#scheduler on/off switch for debug
+# scheduler on/off switch for debug
 on_switch = False
 
-#league names by id
+# login manager startup
+login_manager = LoginManager()
+login_manager.login_view = 'login'
+login_manager.init_app(app)
+
+@login_manager.user_loader
+def load_user(username):
+    user_db = dict(db.child('users').child(username).get().val())
+    user = build_user(user_db['username'], user_db['password'], user_db['location'], user_db['photo'])
+    return user
+
+# league names by id
 league_names = {"78": "Bundesliga", "39": "Premier League", "61": "Ligue 1", "140": "La Liga", "135": "Serie A", "88": "Eredivisie", "383": "Ligat Ha'al", "382": "Liga Leumit"}
 
 @scheduler.task('interval', id='update_database', seconds=300)
@@ -136,6 +148,13 @@ def translate_response(response: dict, index = 0):
     )
     return player
 
+def build_user(username, password, location, photo):
+    user = Users(username, password, location, photo)
+    return user
+
+def insert_user(user: Users):
+    db.child('users').child(user.username).set(user.user_to_dict())
+
 # accepts player object
 def check_data(obj: Player):
     try:
@@ -149,6 +168,24 @@ def check_data(obj: Player):
         db.child("teams").child(obj.team_id).update(obj.team_to_dict())
     except:
         db.child("teams").child(obj.team_id).set(obj.team_to_dict())
+
+def check_user(username: str):
+    try:
+        if db.child("users").child(username).get().val() != None:
+            return True
+        else:
+            return False
+    except:
+        return False
+
+def check_credentials(user: Users):
+    try:
+        if dict(db.child("users").child(user.username).get().val())['password'] == user.password:
+            return True
+        else: 
+            return False
+    except:
+        return False
 
 # accepts player object
 def get_data(obj: Player):
@@ -201,6 +238,49 @@ def psearch(player_name, league_id):
     except:
         return "<h1>Error</h1>"
     return render_template("player.html", player=player, team=team)
+
+@app.route("/signup", methods=["POST", "GET"])
+def signup():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        if check_user(username):
+            flash('This Username already exists')
+            return redirect(url_for('signup'))
+        
+        password = request.form.get('password')
+        user = build_user(username, password, 'f', 'f')
+        insert_user(user)
+        return redirect(url_for('login'))
+    else:
+        return render_template('sign-up.html')
+
+@app.route("/login", methods=["POST", "GET"])
+def login():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        user = build_user(username, password, 'f', 'f')
+        
+        if check_user(username) and check_credentials(user):
+            remember = True if request.form.get('remember') else False
+            login_user(user, remember=remember)
+            return redirect(url_for('profile'))
+        else:
+            flash('One Or More Of The Entered Was Incorrect. Please Try Again')
+            return redirect(url_for('login')) 
+    else:      
+        return render_template('login.html')
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('home'))
+
+@app.route("/profile")
+@login_required
+def profile():
+    return render_template('profile.html', user=current_user)
 
 if __name__ == "__main__":
     if on_switch: scheduler.start()

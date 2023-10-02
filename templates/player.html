@@ -20,7 +20,14 @@
             <a href="/#about">About</a>
             <!-- <a href="#">Service</a> -->
             <a href="/select">Search</a>
-            <button class="login">Login</button>
+            
+            {% if current_user.is_authenticated %}
+            <button class="login" onclick="window.location.href='/logout'">Log Out</button>
+            {% endif %}
+
+            {% if not current_user.is_authenticated %}
+            <button class="login" onclick="window.location.href='/login'">Login</button>
+            {% endif %}
         </nav>
     </header>
 

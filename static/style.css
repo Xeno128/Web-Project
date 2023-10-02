@@ -1,5 +1,6 @@
 html {
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 body {
@@ -378,4 +379,134 @@ a {
     font-family: 'Montserrat', sans-serif;
     color: #babcd2;
     font-size: 40px;
+}
+
+.login-body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: linear-gradient(#1145a4, #243b55);
+}
+
+.signup-body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: linear-gradient(#6211a4, #243b55);
+}
+
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+.login-box h2 {
+    font-family: 'Inter', sans-serif;
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.login-box .input-field {
+    position: relative;
+}
+
+.login-box .input-field input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.login-box .input-field label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.login-box .input-field input:focus ~ label,
+.login-box .input-field input:valid ~ label {
+  top: -20px;
+  left: 0;
+  font-size: 12px;
+}
+
+.login-box .submit-button {
+    display: flex;
+    justify-content: center;
+}
+
+.login-box .submit-button input {
+    width:50%;
+    background-color: #1145a4;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 14px 0;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+
+.remember-me {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.text-auth {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.notification {
+    margin: 0 0 30px;
+    padding: 0;
+    height: 50px;
+    color: red;
+}
+
+.notification a{
+    text-decoration: underline;
+    color: inherit;
+}
+
+#profile{
+    background: linear-gradient(#152695, #7420a9);
+}
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box h1 {
+    font-family: 'Inter', sans-serif;
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
 }
