@@ -6,6 +6,9 @@ from flask_apscheduler import APScheduler
 from flask_login import *
 import cv2
 
+#for file removal
+import os
+
 #location
 import geocoder
 
@@ -331,6 +334,7 @@ def setPic():
         update_user(new_user)
         camera.release()
         
+        os.remove(path)
         return redirect(url_for('logout'))
     else:
         return render_template('set_pic.html')
