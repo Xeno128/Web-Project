@@ -46,3 +46,6 @@ class Users(UserMixin):
     
     def get_id(self):
         return self.username
+    
+    def change_photo(self, photo):
+        self.photo = photo

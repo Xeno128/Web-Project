@@ -18,7 +18,7 @@
             <a href="/select">Search</a>
             
             {% if current_user.is_authenticated %}
-            <button class="login" onclick="window.location.href='/logout'">Log Out</button>
+            <button class="login" onclick="window.location.href='/profile'">Profile</button>
             {% endif %}
 
             {% if not current_user.is_authenticated %}
@@ -26,9 +26,20 @@
             {% endif %}
         </nav>
     </header>
-    
-    <div class="box">
+
+    <div class="box" id="box">
         <h1>Welcome, {{ user.username }}</h1>
+        <h2>Location: {{ user.location }}</h2>
+
+        {% if user.photo != 'None' %}
+        <img src="{{ user.photo }}" alt="User Profile Picture">
+        {% else %}
+        <img src="{{ url_for('static', filename='img/profile.jpg') }}" alt="User Profile Picture">
+        {% endif %}
+        
+        <button class="action-buttons" type="submit" onclick="window.location.href='/set-picture'">Change Your Profile Picture</button>
+
+        <button class="action-buttons" onclick="window.location.href='/logout'">Log out</button>
     </div>
 </body>
 </html>

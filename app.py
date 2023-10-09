@@ -4,6 +4,10 @@ import random
 import pyrebase
 from flask_apscheduler import APScheduler
 from flask_login import *
+import cv2
+
+#location
+import geocoder
 
 #async
 import aiohttp
@@ -17,8 +21,9 @@ firebaseConfig = {
   "storageBucket": "football-stats-7d1b2.appspot.com",
   "messagingSenderId": "419599850111",
   "appId": "1:419599850111:web:5724fff9a527ec7ac37d4a",
-  "measurementId": "G-N7L05EM3XD"
-};
+  "measurementId": "G-N7L05EM3XD",
+  "serviceAccount": "static/firebase-key.json"
+}
 
 # api headers
 headers = {
@@ -29,6 +34,7 @@ headers = {
 # initializing firebase database
 firebase = pyrebase.initialize_app(firebaseConfig)
 db = firebase.database()
+storage = firebase.storage()
 
 # flask startup
 app = Flask(__name__)
@@ -148,12 +154,23 @@ def translate_response(response: dict, index = 0):
     )
     return player
 
+def gen(camera):
+    try:
+        success, image = camera.read()
+    except:
+        return "Camera Not Detected!"
+        
+    return image
+
 def build_user(username, password, location, photo):
     user = Users(username, password, location, photo)
     return user
 
 def insert_user(user: Users):
     db.child('users').child(user.username).set(user.user_to_dict())
+
+def update_user(user: Users):
+    db.child('users').child(user.username).update(user.user_to_dict())
 
 # accepts player object
 def check_data(obj: Player):
@@ -186,6 +203,13 @@ def check_credentials(user: Users):
             return False
     except:
         return False
+
+def update_storage(image, username):
+    try:
+        storage.child(f'profiles/{username}.jpg').put(image)
+        return storage.child(f'profiles/{username}.jpg').get_url(None)
+    except:
+        return "Error Inserting the Profile Pic"
 
 # accepts player object
 def get_data(obj: Player):
@@ -248,10 +272,21 @@ def signup():
             return redirect(url_for('signup'))
         
         password = request.form.get('password')
-        user = build_user(username, password, 'f', 'f')
+        
+        if request.remote_addr == '127.0.0.1':
+            location_obj = geocoder.ip('me')
+        else:
+            location_obj = geocoder.ip(request.remote_addr)
+            
+        if location_obj == None:
+            location = ""
+        else:  
+            location = f"{location_obj.country}, {location_obj.city}"
+            
+        user = build_user(username, password, location, 'None')
         insert_user(user)
         return redirect(url_for('login'))
-    else:
+    else:      
         return render_template('sign-up.html')
 
 @app.route("/login", methods=["POST", "GET"])
@@ -259,7 +294,7 @@ def login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        user = build_user(username, password, 'f', 'f')
+        user = build_user(username, password, '', '')
         
         if check_user(username) and check_credentials(user):
             remember = True if request.form.get('remember') else False
@@ -268,7 +303,7 @@ def login():
         else:
             flash('One Or More Of The Entered Was Incorrect. Please Try Again')
             return redirect(url_for('login')) 
-    else:      
+    else:
         return render_template('login.html')
 
 @app.route('/logout')
@@ -281,6 +316,24 @@ def logout():
 @login_required
 def profile():
     return render_template('profile.html', user=current_user)
+
+@app.route("/set-picture", methods=["POST", "GET"])
+@login_required
+def setPic():
+    camera = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+    if request.method == 'POST':
+        pic = gen(camera)
+        path = f'static/img/tmp/{current_user.username}.jpg'
+        cv2.imwrite(path, pic)
+        
+        url = update_storage(path, current_user.username)
+        new_user = Users(current_user.username, current_user.password, current_user.location, str(url))
+        update_user(new_user)
+        camera.release()
+        
+        return redirect(url_for('logout'))
+    else:
+        return render_template('set_pic.html')
 
 if __name__ == "__main__":
     if on_switch: scheduler.start()

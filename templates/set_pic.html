@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Montserrat:ital,wght@1,900&family=Rubik:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/logo.png') }}">
+    <title>Football Stats</title>
+</head>
+<body id="profile">
+    <div class="box" id="box">
+        <h1>Look At The Camera And Press To Take The Picture</h1>
+        
+        <form method="post">
+            <button class="action-buttons">Capture</button>
+        </form>
+    </div>
+</body>
+</html>

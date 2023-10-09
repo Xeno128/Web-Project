@@ -18,7 +18,7 @@
             <a href="/select">Search</a>
             
             {% if current_user.is_authenticated %}
-            <button class="login" onclick="window.location.href='/logout'">Log Out</button>
+            <button class="login" onclick="window.location.href='/profile'">Profile</button>
             {% endif %}
 
             {% if not current_user.is_authenticated %}
