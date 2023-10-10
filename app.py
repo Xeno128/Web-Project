@@ -60,7 +60,7 @@ login_manager.init_app(app)
 @login_manager.user_loader
 def load_user(username):
     user_db = dict(db.child('users').child(username).get().val())
-    user = build_user(user_db['username'], user_db['password'], user_db['location'], user_db['photo'])
+    user = build_user(user_db['username'], user_db['password'], user_db['location'], user_db['photo'], isAdmin=user_db['isAdmin'])
     return user
 
 # league names by id
@@ -165,8 +165,8 @@ def gen(camera):
         
     return image
 
-def build_user(username, password, location, photo):
-    user = Users(username, password, location, photo)
+def build_user(username, password, location, photo, isAdmin = False):
+    user = Users(username, password, location, photo, isAdmin= isAdmin)
     return user
 
 def insert_user(user: Users):
@@ -338,6 +338,29 @@ def setPic():
         return redirect(url_for('logout'))
     else:
         return render_template('set_pic.html')
+
+@app.route('/admin', methods=["POST", "GET"])
+@login_required
+def admin():
+    if current_user.isAdmin:
+        if request.method == 'POST':
+            forms = [('username', request.form.get('username')), ('password', request.form.get('password')), ('location', request.form.get('location')), ('photo', request.form.get('photo')), ('isAdmin', request.form.get('admin'))]
+            if check_user(forms[0][1]): 
+                user = dict(db.child("users").child(forms[0][1]).get().val())
+            else:
+                flash('User Was Not Found')
+                return redirect(url_for('admin'))
+                
+            for form in forms:
+                if form[1] != "":
+                    user[form[0]] = form[1]
+            
+            db.child('users').child(forms[0][1]).update(user)
+            return redirect(url_for('admin'))
+        else:
+            return render_template('admin.html')
+    else:
+        return "<h1>You Are Not An Admin!</h1>"
 
 if __name__ == "__main__":
     if on_switch: scheduler.start()

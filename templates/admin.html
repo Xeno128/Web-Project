@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/logo.png') }}">
     <title>Football Stats</title>
 </head>
-<body class="signup-body">
+<body>
     <header class="navigation">
         <h2>Football-Stats</h2>
         <nav class="nav-bar">
@@ -30,37 +30,51 @@
             {% endif %}
         </nav>
     </header>
-
-    <div class="login-box">
+    
+    <div class="box" id="box">
+        <h1>Change User Credentials</h1>
 
         {% with messages = get_flashed_messages() %}
         {% if messages %}
             <div class="notification is-danger">
-                {{ messages[0] }}. Go to <a href="{{ url_for('login') }}">login page</a>.
+                {{ messages[0] }}.
             </div>
         {% endif %}
         {% endwith %}
 
-        <h2>Sign Up</h2>
-        <form method="post">
-            <div class="input-field">
-                <input type="text" name="username" required>
-                <label>Username</label>
-            </div>
+        <form method="post" class="input-form">
+            <div class="inputs">
+                <div class="input-field">
+                    <input type="text" name="username" required>
+                    <label>Username</label>
+                </div>
+                
+                <div class="input-field">
+                    <input type="text" name="password">
+                    <label>Password</label>
+                </div>
 
-            <div class="input-field">
-                <input type="password" name="password" required>
-                <label>Password</label>
+                <div class="input-field">
+                    <input type="text" name="location">
+                    <label>location</label>
+                </div>
+
+                <div class="input-field">
+                    <input type="text" name="photo">
+                    <label>Photo URL</label>
+                </div>
+
+                <div class="input-field">
+                    <input type="text" name="admin">
+                    <label>Admin (True/False)</label>
+                </div>
             </div>
 
             <div class="submit-button">
-                <input type="submit" value="Sign Up">
-            </div>
-
-            <div class="text-auth">
-                <h3>Already Have An Account? <a href="/login" style="color: #00b3ff">Login</a></h3>
+                <input type="submit" value="Submit">
             </div>
         </form>
+
     </div>
 </body>
 </html>

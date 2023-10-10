@@ -432,11 +432,11 @@ a {
     text-align: center;
 }
 
-.login-box .input-field {
+.input-field {
     position: relative;
 }
 
-.login-box .input-field input {
+.input-field input {
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
@@ -459,6 +459,21 @@ a {
     transition: .5s;
 }
 
+.box .input-field label {
+    position: absolute;
+    font-family: 'Inter', sans-serif;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 26px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+    top: -20px;
+    left: 0;
+    font-size: 12px;
+}
+
 .login-box .input-field input:focus ~ label,
 .login-box .input-field input:valid ~ label {
   top: -20px;
@@ -466,12 +481,12 @@ a {
   font-size: 12px;
 }
 
-.login-box .submit-button {
+.submit-button {
     display: flex;
     justify-content: center;
 }
 
-.login-box .submit-button input {
+.submit-button input {
     width:50%;
     background-color: #1145a4;
     border: none;
@@ -534,4 +549,15 @@ a {
     font-family: 'Inter', sans-serif;
     font-size: 20px;
     color: #fff;
+}
+
+.inputs {
+    display: flex;
+    gap: 10px;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

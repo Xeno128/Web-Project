@@ -14,7 +14,11 @@
         <nav class="nav-bar">
             <a href="/">Home</a>
             <a href="/#about">About</a>
-            <!-- <a href="#">Service</a> -->
+            
+            {% if current_user.isAdmin == True %}
+            <a href="/admin">Admin</a>
+            {% endif %}
+
             <a href="/select">Search</a>
             
             {% if current_user.is_authenticated %}
