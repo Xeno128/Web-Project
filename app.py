@@ -49,7 +49,7 @@ scheduler = APScheduler()
 scheduler.api_enabled = False
 scheduler.init_app(app)
 
-# scheduler on/off switch for debug
+# scheduler on/off switch for timer
 on_switch = False
 
 # login manager startup
@@ -343,7 +343,7 @@ def setPic():
 @login_required
 def admin():
     if current_user.isAdmin:
-        if request.method == 'POST':
+        if request.method == 'POST': #המשך הקוד חבוי מטעמי עיצוב
             forms = [('username', request.form.get('username')), ('password', request.form.get('password')), ('location', request.form.get('location')), ('photo', request.form.get('photo')), ('isAdmin', request.form.get('admin'))]
             if check_user(forms[0][1]): 
                 user = dict(db.child("users").child(forms[0][1]).get().val())
