@@ -255,7 +255,7 @@ def psearch(player_name, league_id):
     player_response = asyncio.run(RequestPlayer(player_name, league_id))
     
     if player_response['results'] == 0:
-        return "<h1>Player Not Found!</h1>"
+        return "<h1 style='text-align:center'>Player Not Found!</h1>"
     
     player_obj = translate_response(player_response)
 
@@ -263,7 +263,7 @@ def psearch(player_name, league_id):
         check_data(player_obj)
         player, team = get_data(player_obj)
     except:
-        return "<h1>Error</h1>"
+        return "<h1 style='text-align:center'>Error</h1>"
     return render_template("player.html", player=player, team=team)
 
 @app.route("/signup", methods=["POST", "GET"])

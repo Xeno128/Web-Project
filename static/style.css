@@ -397,6 +397,14 @@ a {
     font-size: 40px;
 }
 
+#spec-title {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(236, 163, 5);
+    font-size: 30px;
+    text-align: center;
+    margin: 1px;
+}
+
 .login-body {
     margin:0;
     padding:0;
